@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import FileUpload from './components/upload/FileUpload.vue'
 
-const currentView = ref('dashboard') // 'dashboard', 'upload', 'alerts'
+const currentView = ref('upload') // Start with upload view
 
 const setView = (view) => {
   currentView.value = view
@@ -63,11 +64,7 @@ const setView = (view) => {
           <p class="text-secondary">Upload Windows Event Logs for analysis</p>
         </div>
         
-        <div class="placeholder-content">
-          <div class="placeholder-icon">📁</div>
-          <h3>Upload Interface Coming Soon</h3>
-          <p class="text-secondary">Drag and drop .evtx files here</p>
-        </div>
+        <FileUpload />
       </div>
 
       <!-- Alerts View -->
